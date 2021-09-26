@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>RGB COLOR GUESSER</title>
+  </head>
+  <body>
+    <h1>Guess the color</h1>
+    <h2></h2>
+    <p id="score">Score:</p>
+    <hr />
+    <button id="btn-reset">Reset</button>
+    <h3>Lives left: 3</h3>
+
+    <div class="first-two-colors">
+      <div id="color-1" class="colors"></div>
+
+      <div id="color-2" class="colors"></div>
+    </div>
+
+    <div class="last-two-colors">
+      <div id="color-3" class="colors"></div>
+
+      <div id="color-4" class="colors"></div>
+    </div>
+
+    <div class="modal hide-modal">
+      <p>You lost!</p>
+      <i id="x-icon" class="fas fa-2x fa-times"></i>
+    </div>
+
+    <footer>
+      <h4>@ Developed by eIonut</h4>
+    </footer>
+  </body>
+  <script src="app.js"></script>
+</html>
