@@ -65,6 +65,7 @@ function init() {
   const randomNumber = Math.floor(Math.random() * 4) + 1;
   rgbDisplay.innerHTML = color;
   scoreDisplay.textContent = `Score: ${score}`;
+
   console.log(randomNumber);
 
   if (randomNumber === 1) {
@@ -95,8 +96,13 @@ colorOneSquare.addEventListener("click", function () {
   if (play) {
     stillPlaying();
     if (rgbDisplay.innerHTML === colorOneSquare.style.backgroundColor) {
+      const pWon = document.createElement("p");
+      createP(pWon);
       score = score + 10;
       document.querySelector("#score").innerHTML = `Score: ${score}`;
+      setInterval(function () {
+        pWon.remove();
+      }, 1000);
     } else {
       lives--;
       livesDisplay.textContent = `Lives left: ${lives}`;
@@ -110,9 +116,16 @@ colorTwoSquare.addEventListener("click", function () {
   if (play) {
     stillPlaying();
     if (rgbDisplay.innerHTML === colorTwoSquare.style.backgroundColor) {
+      const pWon = document.createElement("p");
+      createP(pWon);
+
       score = score + 10;
+
       document.querySelector("#score").innerHTML = `Score: ${score}`;
       console.log("da");
+      setInterval(function () {
+        pWon.remove();
+      }, 1000);
     } else {
       lives--;
       livesDisplay.textContent = `Lives left: ${lives}`;
@@ -126,9 +139,16 @@ colorThreeSquare.addEventListener("click", function () {
   if (play) {
     stillPlaying();
     if (rgbDisplay.innerHTML === colorThreeSquare.style.backgroundColor) {
+      const pWon = document.createElement("p");
+      createP(pWon);
+
       score = score + 10;
+
       document.querySelector("#score").innerHTML = `Score: ${score}`;
       console.log("da");
+      setInterval(function () {
+        pWon.remove();
+      }, 1000);
     } else {
       lives--;
       livesDisplay.textContent = `Lives left: ${lives}`;
@@ -138,13 +158,24 @@ colorThreeSquare.addEventListener("click", function () {
   }
 });
 
+function createP(pWon) {
+  pWon.append("You guessed!");
+  scoreDisplay.insertAdjacentElement("afterend", pWon);
+  pWon.classList.add("p-won");
+}
+
 colorFourSquare.addEventListener("click", function () {
   if (play) {
     stillPlaying();
     if (rgbDisplay.innerHTML === colorFourSquare.style.backgroundColor) {
+      const pWon = document.createElement("p");
+      createP(pWon);
       score = score + 10;
       document.querySelector("#score").innerHTML = `Score:${score}`;
       console.log("da");
+      setInterval(function () {
+        pWon.remove();
+      }, 1000);
     } else {
       lives--;
       livesDisplay.textContent = `Lives left: ${lives}`;
@@ -153,3 +184,10 @@ colorFourSquare.addEventListener("click", function () {
     init();
   }
 });
+
+function set() {
+  let pWon = document.createElement("p");
+  pWon.append("You guessed!");
+  scoreDisplay.insertAdjacentElement("afterend", pWon);
+  pWon.classList.add("p-won");
+}
